@@ -11,4 +11,6 @@ def topics(request):
     context = {'topics': topics}
     return render(request, 'learning_logs/topics.html', context)
 
+def topic(request):
+    return 
 
