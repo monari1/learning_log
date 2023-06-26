@@ -35,12 +35,15 @@ INSTALLED_APPS = [
     'learning_logs',
     #default django apps
     'django.contrib.admin',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+ZOOM_API_KEY = 'your_zoom_api_key'
+ZOOM_API_SECRET = 'your_zoom_api_secret'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

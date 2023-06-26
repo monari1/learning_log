@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from .zoom import create_zoom_meeting
+
 from .models import Topic
 from .forms import TopicForm
 
@@ -31,5 +33,14 @@ def new_topic(request):
 
     context = {'form':form}
     return render(request, 'learning_logs/new_topic.html', context)
+
+def create_meeting(request):
+    if request.method == 'POST':
+        topic = request.POST.get('topic')
+        meeting_data = create_zoom_meeting(topic)
+        # Process the meeting data or return it to the template
+    else:
+        # Render your form template
+        return render(request, 'learning_logs/create_meeting.html')
 
 

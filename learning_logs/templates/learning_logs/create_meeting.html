@@ -1,0 +1,13 @@
+{% extends 'learning_logs/base.html' %}
+{% block content %}
+<form action="{% url 'learning_logs:create_meeting' %}" method='post'>
+    {% csrf_token %}
+    <input type="text" name="topic" placeholder="Meeting Topic">
+    <button type="submit">Create Meeting</button>
+</form>
+
+
+{% endblock content %}
+
+
+
