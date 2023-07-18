@@ -1,0 +1,19 @@
+{% extends "learning_logs/base.html" %}
+{% block content %}
+{%if form.errors%}
+
+
+<p>
+    Your username or password is incorrect. Please try again
+</p>
+
+{%endif %}
+{% comment %} <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
+<p>Edit entry:</p> {% endcomment %}
+<form method='post' action="{% url 'users:login' %}">
+{% csrf_token %}
+{{ form.as_p }}
+<button name="submit">Login In</button>
+<input type = 'hidden' name ='next' value = "{% url 'learning_logs:index' %}">
+</form>
+{% endblock content %}
