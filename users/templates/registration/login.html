@@ -1,13 +1,11 @@
 {% extends "learning_logs/base.html" %}
 {% block content %}
-{%if form.errors%}
-
-
+{% if form.errors %}
 <p>
     Your username or password is incorrect. Please try again
 </p>
 
-{%endif %}
+{% endif %}
 {% comment %} <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
 <p>Edit entry:</p> {% endcomment %}
 <form method='post' action="{% url 'users:login' %}">

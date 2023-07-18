@@ -1,6 +1,11 @@
 <p> <a href="{% url 'learning_logs:index' %}"> Learning Logs </a> -
     <a href="{% url 'learning_logs:topics' %}"> Topics </a> 
 
+    {%if user.is_authenticated%}
+    Hello, {{user.username}}form.as_p
+    {%else%}
+    <a href="{% url 'users:login' %}"> Login </a> 
+    {%endif%}
 </p>
 
 
