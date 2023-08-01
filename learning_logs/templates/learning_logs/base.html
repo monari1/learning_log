@@ -1,8 +1,31 @@
-<p> <a href="{% url 'learning_logs:index' %}"> Learning Logs </a> -
+{%load bootstrap4%}
+<!doctype html>
+<html>
+    <head> 
+
+        <meta charset ="utf-8">
+        <meta name = "viewport", content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
+    <title>Learning Log</title>
+    {%bootstrap_css%}
+    {%bootstrap_javascript jquery = 'full'%}
+
+
+
+
+    </head>
+
+
+
+
+
+
+
+
+{% comment %} <p> <a href="{% url 'learning_logs:index' %}"> Learning Logs </a> -
     <a href="{% url 'learning_logs:topics' %}"> Topics </a> 
 
     {%if user.is_authenticated%}
-    Hello, {{user.username}}form.as_p
+    Hello, {{user.username}}
         <a href="{% url 'users:logout' %}"> Log out </a> 
     {%else%}
     <a href="{% url 'users:register' %}">Register</a> -
@@ -11,4 +34,4 @@
 </p>
 
 
-{% block content %}{% endblock content %}
+{% block content %}{% endblock content %} {% endcomment %}
